@@ -1,0 +1,203 @@
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* make the arrows of the carousel black */
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(100%);
+  /* move the arrow outside the carousel slider */
+  margin: -20%;
+}
+
+.carousel {
+  max-width: 400px;
+  margin: auto;
+}
+
+.margin-right-except-last :not(:last-child) {
+  margin-right: 20px;
+}
+
+.sortable {
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-image: url(../img/sort_both.png);
+}
+
+.ascending {
+  background-image: url(../img/sort_ascBlack.png);
+}
+
+.descending {
+  background-image: url(../img/sort_descBlack.png);
+}
+
+.fb-btn {
+  font-family: Lucida Grande, Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 13px 30px 15px 44px;
+  background: #3a5a97;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 20, 0.4);
+  text-decoration: none;
+  line-height: 1;
+  position: relative;
+  width: 100%;
+  outline: none;
+}
+
+.connect:before {
+  display: inline-block;
+  position: relative;
+  background-image: url(../img/facebook_logo.png);
+  height: 23px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  text-indent: -9999px;
+  text-align: center;
+  width: 29px;
+  line-height: 23px;
+  margin: -8px 7px -7px -30px;
+  padding: 2 25px 0 0;
+  content: 'f';
+}
+
+i.send {
+  height: 30px;
+  width: 35px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7dcae8), to(#3cafdd));
+  background: linear-gradient(to bottom, #f47137, #fdac80);
+}
+
+i.send:before {
+  content: "";
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 20%;
+  height: 16px;
+  width: 21px;
+  -webkit-clip-path: polygon(10% 0%, 90% 50%, 10% 100%, 20% 55%, 50% 50%, 20% 45%);
+  -moz-clip-path: polygon(10% 0%, 90% 50%, 10% 100%, 20% 55%, 50% 50%, 20% 45%);
+  clip-path: polygon(10% 0%, 90% 50%, 10% 100%, 20% 55%, 50% 50%, 20% 45%);
+  left: 8px;
+  top: 8px;
+}
+
+/* .chat-container .MuiTypography-root {
+  font-size: 16px;
+  font-weight: bold;
+} */
+
+.chat-container .form-control:focus {
+  background: none;
+}
+
+.chat-container .form-control {
+  border: none;
+}
+
+.chat-container .fa-times-circle {
+  position: relative;
+  left: 10px;
+}
+
+.chat-container .chat-content-left {
+  width: 100%;
+  background: #e4e4e4;
+  padding: 10px;
+  margin: 20px 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.chat-container .chat-content-right {
+  width: 100%;
+  float: right;
+  color: #fff;
+  background: linear-gradient(180deg, #fdac80, #f47137);
+  margin: 20px 0;
+  padding: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.message-left, .message-right {
+  width: 55%;
+  display: flex;
+}
+
+.message-right {
+  float: right;
+}
+
+.chat-container .profile {
+  width: 66px;
+  position: relative;
+  top: 18px;
+  text-align: center;
+}
+.chat-container img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+.message-left span,
+.message-right span {
+  font-size: 10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 8px;
+}
+
+.navbar a:not(.btn):not(.dropdown-item) {
+  color: inherit;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:not(.btn):hover {
+  transition: all 300ms ease 0s;
+  opacity: .35;
+  color: inherit;
+}
+
+.table-shopping .btn-secondary {
+  position: relative;
+}
+.notify {
+  width: 12px;
+  height: 12px;
+  background-color: #ffb236;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+}
+
+/* react-lazyload wrapper style */
+.inline-wrapper {
+  display: inline;
+}

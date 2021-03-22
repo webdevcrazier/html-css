@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="The platform for buying and selling authentic sneakers" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.4/reboot.css" />
+    <link rel="stylesheet" href="assets/css/now-ui-dashboard.css" />
+    <link rel="stylesheet" href="assets/css/sneakertrader.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" href="logo_transparent_background.png" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <title>Sneaker Trader</title>
+  </head>
+  <body class="sidebar-mini">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+
+
+      <div id="mySidenav" class="sidenav">
+        <h1>Filter Results</h1>
+        <a href="javascript:void(0)" class="closebtn">&times;</a>
+        <div>
+            <div class="mobile_select_div">
+              <label for="brands">Brands</label>
+              <select multiple="multiple" class="select2_multiple brands" name="brands">
+              </select>
+            </div>
+            <div class="mobile_select_div">
+              <label for="styles">Styles</label>
+              <select multiple="multiple" class="select2_multiple styles" name="styles">
+              </select>
+            </div>
+            <div class="mobile_select_div">
+              <label for="size">Size</label>
+              <select multiple="multiple" class="select2_multiple size" name="size">
+              </select>
+            </div>
+            <div class="mobile_select_div">
+              <label for="condition">Condition</label>
+              <select multiple="multiple" class="select2_multiple condition" name="condition">
+              </select>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="page-heading">
+        <div class="page-heading__top">
+          <img src="pic/site-logo.png" class="site-logo">
+          <div class="inputContainer">
+            <input type="text" name="" placeholder="Search for Sneakers">
+            <img src="pic/search-icon.png" class="search-icon">
+          </div>
+          <img src="pic/mobile-menu.png" class="mobile-menu">
+          <ul class="page-heading__top__menu">
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </div>
+        <div class="page-heading__center">
+          <div class="page-heading__left">
+            <h1 class="page-heading__title">The Place to get your kicks</h1>
+          </div>
+            <div class="page-heading__info">
+              <p>
+                Infographic about sneaker trader process for buyers
+              </p>
+            </div>
+          <!-- <div class="page-heading__right"> -->
+           <!--  <ul class="copped-list">
+              <li class="copped-list__item">
+                <img class="copped-list__img" src="pic/copped-list-1.png" alt="">
+                <span class="copped-list__text"><b>Aaron</b> 🇳🇿 just copped a pair of <br> <b>Jordan</b> 11’s for <b>$300</b></span>
+              </li>
+              <li class="copped-list__item">
+                <img class="copped-list__img" src="pic/copped-list-1.png" alt="">
+                <span class="copped-list__text"><b>Alex</b> 🇸🇪 recently copped a pair of<br> <b>Yeezy Boost</b> 350 V2’s for <b>$390</b></span>
+              </li>
+            </ul> -->
+          <!-- </div> -->
+        </div>
+        <div class="page-heading__popular">
+          <p>Popular today</p>
+          <div class="page-heading__list">
+              <div><a href="#"><img src="./pic/fire.png"> Jordan 6</a></div>
+              <div><a href="#"><img src="./pic/fire.png"> Air max 1</a></div>
+              <div><a href="#"><img src="./pic/fire.png"> Air force 1</a></div>
+              <div><a href="#"><img src="./pic/fire.png"> Yezzy Boost 350 V2</a></div>
+              <div><a href="#"><img src="./pic/fire.png"> Air max 95</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-filters">
+        <div class="container-md">
+          <div class="filters">
+           
+            <div class="filter">
+              <label>Brands</label>
+               <select multiple="multiple" class="select2_multiple brands" name="brands">
+                  <option value="ALL">
+                      Air Jordan 1 Mid SE Signal Blue
+                  </option>
+                  <option value="1">
+                     Air Jordan 1 Mid SE All-Star Weekend
+                  </option>
+                  <option value="2">
+                      Air Jordan 1 Mid SE All-Star Weekend
+                  </option>
+               </select>
+            </div>
+            <div class="filter">
+              <label>Styles</label>
+               <select multiple="multiple"  class="select2_multiple styles" name="styles">
+                  <option value="ALL">All Styles</option>
+                  <option value="value">Air Jordan 1 Mid SE All-Star Weekend</option>
+               </select>
+            </div>
+            <div class="filter">
+              <label>Size</label>
+               <select  multiple="multiple" class="select2_multiple size" name="size">
+                  <option value="ALL">Size</option>
+                  <option value="value">size</option>
+               </select>
+            </div>
+            <div class="filter">
+              <label>Condition</label>
+              <select  multiple="multiple" class="select2_multiple condition" name="condition">
+                  <option value="ALL">All Condition</option>
+                  <option value="value">condition</option>
+               </select>
+            </div>
+          </div>
+          <div class="mobile_filter_sort">
+            <div class="mobile_filter">
+              <h1>Filter</h1>
+              <div class="mobile_filter_div">
+                <p>5 Filters</p>
+                <img src="./pic/arrow-down.png" alt="">
+              </div>
+            </div>
+            <div class="separator">
+            </div>
+             <div class="mobile_sort">
+              <h1>Sort</h1>
+              <div class="mobile_sort_div">
+                <p>Most Popular</p>
+                <img src="./pic/arrow-down.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="sorts">
+             <div class="page-sort__list">
+              <div><a href="#"><img src="./pic/fire.png">Most Popular</a></div>
+              <div><a href="#"><img src="./pic/money.png">Most Bought</a></div>
+              <div><a href="#"><img src="./pic/down.png">Price</a></div>
+              <div><a href="#"><img src="./pic/up.png">Price</a></div>
+          </div>
+          </div>
+        </div>
+      </div>
+        <div class="rounded-border"></div>
+      <div class="page-products">
+        <div class="product product_1">
+          <img src="./pic/bluejordan.png" alt="blue jordan">
+          <h3><a href="#">Air Jordan 1 Mid SE Signal Blue</a></h3>
+          <p><span class="price price_product1">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yezzy Boost 350 V2</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/bluejordan.png" alt="blue jordan">
+          <h3><a href="#">Jordan 11</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/bluejordan.png" alt="blue jordan">
+          <h3><a href="#">Air Jordan 1 Mid SE All-Star Weekend</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/bluejordan.png" alt="blue jordan">
+          <h3><a href="#">Air Max Plus TN x Supreme University</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/bluejordan.png" alt="blue jordan">
+          <h3><a href="#">Air Jordan 3 Retro SP x Fragment ..</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/bluejordan.png" alt="blue jordan">
+          <h3><a href="#">Air Max 97 Undefeated Militia</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+        <div class="product">
+           <img src="./pic/yezze.png" alt="blue jordan">
+          <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
+          <p><span class="price">$420</span>Lowest ask</p>
+        </div>
+      </div>
+      <div class="product_footer">
+        <button>Load more</button>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.brands').select2({
+        placeholder: 'All Brands'
+      });
+      $('.styles').select2({
+        placeholder: 'All Styles'
+      });
+      $('.size').select2({
+        placeholder: 'Size'
+      });
+      $('.condition').select2({
+        placeholder: 'All conditions'
+      });
+      $(".styles").select2({
+       templateResult: function (idioma) {
+        var $span = $("<span><img style='height:50px;width:50px' src='pic/bluejordan.png'/> " + 'Air Jordan 1 Mid SE Signal Blue' + "</span>");
+          return $span;
+        }
+      });
+      $('.mobile_filter_div').click(function(){
+        $('.sidenav').css({
+          'width':'300px',
+          'zIndex':'99999'
+        })
+      })
+      $('.closebtn').click(function(){
+          $('.sidenav').css({
+          'width':'0px',
+        })
+      })
+    })
+  </script>
+</html>
