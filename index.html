@@ -22,8 +22,6 @@
   <body class="sidebar-mini">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-
-
       <div id="mySidenav" class="sidenav">
         <h1>Filter Results</h1>
         <a href="javascript:void(0)" class="closebtn">&times;</a>
@@ -58,7 +56,6 @@
             </div>
         </div>
       </div>
-
       <div id="mySidenavFilter" class="sidenavBrands">
          <h1>Brands</h1>
          <a href="javascript:void(0)" class="backbtn backbtnBrands"><img src="./pic/arrow-left.png"></a>
@@ -79,7 +76,6 @@
            <li>Vans</li>
          </ul>
       </div>
-
       <div id="mySidenavFilter" class="sidenavStyles">
          <h1>Styles</h1>
          <a href="javascript:void(0)" class="backbtn backbtnStyles"><img src="./pic/arrow-left.png"></a>
@@ -104,7 +100,6 @@
            <li><img src="./pic/yezze.png"><p>Air Max 97 x Undefeated Militia Green</p></li>
          </ul>
       </div>
-
       <div class="page-heading">
         <div class="page-heading__top">
           <img src="pic/site-logo.png" class="site-logo">
@@ -207,9 +202,10 @@
           </div>
         </div>
       </div>
-        <div class="rounded-border"></div>
+      <div class="rounded-border"></div>
       <div class="page-products">
         <div class="product product_1">
+          <div class="circle"><a href="#"><img src="./pic/fire.png">Popular Today</a></div>
           <img src="./pic/bluejordan.png" alt="blue jordan">
           <h3><a href="#">Air Jordan 1 Mid SE Signal Blue</a></h3>
           <p><span class="price price_product1">$420<img class="icon_desktop" src="./pic/going_up.png"></span>Lowest ask <img class="icon_mobile" src="./pic/going_up.png"></p>
@@ -218,7 +214,6 @@
            <img src="./pic/yezze.png" alt="blue jordan">
           <h3><a href="#">Yezzy Boost 350 V2</a></h3>
           <p><span class="price">$420</span><span class="l_ask">Lowest ask</span><img src="./pic/going_down.png"></p>
-          
         </div>
         <div class="product">
            <img src="./pic/bluejordan.png" alt="blue jordan">
@@ -295,9 +290,7 @@
           <h3><a href="#">Yeezy Boost 350 V2 Cream White</a></h3>
           <p><span class="price">$420</span><span class="l_ask">Lowest ask</span><img src="./pic/going_down.png"></p>
         </div>
-      </div>
-      <div class="product_footer">
-        <button>Load more</button>
+          <button class="load_more load_more_desktop">Load more</button>
       </div>
     </div>
   </body>
@@ -305,6 +298,11 @@
     $(document).ready(function() {
       if($(window).width() <= 1025){
         $('.product').removeClass('product_1')
+         $('.load_more').removeClass('load_more_desktop')
+          $('div').removeClass('circle')
+          $('.product>img').css({
+            'zIndex':'0'
+          })
       }
       $( window ).resize(function() {
         if($(window).width() <= 1025){
