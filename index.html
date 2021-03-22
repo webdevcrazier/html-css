@@ -30,27 +30,80 @@
         <div>
             <div class="mobile_select_div">
               <label for="brands">Brands</label>
-              <select multiple="multiple" class="select2_multiple brands" name="brands">
-              </select>
+              <div class="mobile_filter_brands">
+                <p>All Brands</p>
+                <img src="./pic/arrow-down.png">
+              </div>
             </div>
             <div class="mobile_select_div">
               <label for="styles">Styles</label>
-              <select multiple="multiple" class="select2_multiple styles" name="styles">
-              </select>
+              <div class="mobile_filter_styles">
+                <p>All Styles</p>
+                <img src="./pic/arrow-down.png">
+              </div>
             </div>
             <div class="mobile_select_div">
               <label for="size">Size</label>
-              <select multiple="multiple" class="select2_multiple size" name="size">
-              </select>
+              <div class="mobile_filter_size">
+                <p>All</p>
+                <img src="./pic/arrow-down.png">
+              </div>
             </div>
             <div class="mobile_select_div">
               <label for="condition">Condition</label>
-              <select multiple="multiple" class="select2_multiple condition" name="condition">
-              </select>
+              <div class="mobile_filter_condition">
+                <p>All Condition</p>
+                <img src="./pic/arrow-down.png">
+              </div>
             </div>
         </div>
       </div>
 
+      <div id="mySidenavFilter" class="sidenavBrands">
+         <h1>Brands</h1>
+         <a href="javascript:void(0)" class="backbtn backbtnBrands"><img src="./pic/arrow-left.png"></a>
+         <hr></hr>
+         <ul class="brands_list">
+           <li>Adidas</li>
+           <li>Asics</li>
+           <li>Bape</li>
+           <li>Clarks</li>
+           <li>Converse</li>
+           <li>Fila</li>
+           <li>Jordan</li>
+           <li>New Balance</li>
+           <li>Nike</li>
+           <li>North Face</li>
+           <li>Puma</li>
+           <li>Reebok</li>
+           <li>Vans</li>
+         </ul>
+      </div>
+
+      <div id="mySidenavFilter" class="sidenavStyles">
+         <h1>Styles</h1>
+         <a href="javascript:void(0)" class="backbtn backbtnStyles"><img src="./pic/arrow-left.png"></a>
+         <hr></hr>
+         <div class="mobile_inputContainer">
+            <img src="pic/search-icon.png" class="search-icon">
+            <input type="text" name="" placeholder="Search 320 Styles..">
+          </div>
+         <ul class="styles_list">
+           <li><img src="./pic/bluejordan.png"><p>Air Jordan 1 Mid SE Signal Blue</p></li>
+           <li><img src="./pic/airjordan-11.png"><p>Air Jordan 1 Mid SE All-Star Weekend</p></li>
+           <li><img src="./pic/bluejordan.png"><p>Yeezy Boost 350 V2</p></li>
+           <li><img src="./pic/yezze.png"><p>Air Max 97 x Undefeated Militia Green</p></li>
+           <li><img src="./pic/bluejordan.png"><p>Air Jordan 1 Mid SE Signal Blue</p></li>
+           <li><img src="./pic/yezze.png"><p>Air Jordan 1 Mid SE All-Star Weekend</p></li>
+           <li><img src="./pic/airjordan-11.png"><p>Yeezy Boost 350 V2</p></li>
+           <li><img src="./pic/bluejordan.png"><p>Air Max 97 x Undefeated Militia Green</p></li>
+           <li><img src="./pic/yezze.png"><p>Air Jordan 1 Mid SE Signal Blue</p></li>
+           <li><img src="./pic/bluejordan.png"><p>Air Jordan 1 Mid SE Signal Blue</p></li>
+           <li><img src="./pic/airjordan-11.png"><p>Air Jordan 1 Mid SE Signal Blue</p></li>
+           <li><img src="./pic/bluejordan.png"><p>Yeezy Boost 350 V2</p></li>
+           <li><img src="./pic/yezze.png"><p>Air Max 97 x Undefeated Militia Green</p></li>
+         </ul>
+      </div>
 
       <div class="page-heading">
         <div class="page-heading__top">
@@ -75,18 +128,6 @@
                 Infographic about sneaker trader process for buyers
               </p>
             </div>
-          <!-- <div class="page-heading__right"> -->
-           <!--  <ul class="copped-list">
-              <li class="copped-list__item">
-                <img class="copped-list__img" src="pic/copped-list-1.png" alt="">
-                <span class="copped-list__text"><b>Aaron</b> 🇳🇿 just copped a pair of <br> <b>Jordan</b> 11’s for <b>$300</b></span>
-              </li>
-              <li class="copped-list__item">
-                <img class="copped-list__img" src="pic/copped-list-1.png" alt="">
-                <span class="copped-list__text"><b>Alex</b> 🇸🇪 recently copped a pair of<br> <b>Yeezy Boost</b> 350 V2’s for <b>$390</b></span>
-              </li>
-            </ul> -->
-          <!-- </div> -->
         </div>
         <div class="page-heading__popular">
           <p>Popular today</p>
@@ -102,7 +143,6 @@
       <div class="gallery-filters">
         <div class="container-md">
           <div class="filters">
-           
             <div class="filter">
               <label>Brands</label>
                <select multiple="multiple" class="select2_multiple brands" name="brands">
@@ -262,6 +302,25 @@
   </body>
   <script type="text/javascript">
     $(document).ready(function() {
+      if($(window).width() <= 1025){
+        $('.product').removeClass('product_1')
+      }
+      $( window ).resize(function() {
+        if($(window).width() <= 1025){
+          $('.product').removeClass('product_1')
+        }else{
+          $('.page-products div:first').addClass('product_1');
+        }
+          $('.sidenav').css({
+            'display': 'none'
+          })
+          $('.sidenavBrands').css({
+            'display': 'none'
+          })
+          $('.sidenavStyles').css({
+            'display': 'none'
+          })
+      });
       $('.brands').select2({
         placeholder: 'All Brands'
       });
@@ -280,14 +339,89 @@
           return $span;
         }
       });
+      $('.select2_multiple_mobile').select2()
       $('.mobile_filter_div').click(function(){
         $('.sidenav').css({
-          'width':'300px',
+          'width':'85%',
           'zIndex':'99999'
         })
       })
       $('.closebtn').click(function(){
           $('.sidenav').css({
+          'width':'0px',
+        })
+      })
+      $('.mobile_filter_brands').click(function(){
+        $('.sidenavBrands').css({
+          'display':'block',
+          'width':'85%',
+          'zIndex':'99999'
+        })
+      })
+      $('.mobile_filter_styles').click(function(){
+        $('.sidenavStyles').css({
+          'display':'block',
+          'width':'85%',
+          'zIndex':'99999'
+        })
+      })
+      $('.brands_list>li').click(function(){
+        if($(this).hasClass('selectedBrands')){
+          $(this).removeClass('selectedBrands')
+          $(this).find('img').css({
+            'display':'none'
+          })
+          $(this).css({
+            'color':'black'
+          })
+        }else{
+          $(this).prepend(`<img src="./pic/check_red.png">`)
+          $(this).css({
+            'color':'gray'
+          })
+          $(this).addClass('selectedBrands')
+        }
+      })
+      $('.backbtnBrands').click(function(){
+        $('.sidenavBrands').css({
+          'width':'0px',
+        })
+        var sel = ''
+         $('.selectedBrands').each(function(index,value){
+            if(index < 1){
+                sel += $(this).text()
+            }
+          })
+         if($('.selectedBrands').length > 1){
+          sel += ' ... & '
+          sel += $('.selectedBrands').length -1
+          sel += ' others'
+         }
+         if($('.selectedBrands').length == 0){
+           sel = 'All Brands'
+         }else{
+            $('.mobile_filter_brands').css({
+              'background':'#EEEEEE'
+            })
+         }
+          $('.mobile_filter_brands>p').html(sel)
+
+      })
+      $('.styles_list>li').click(function(){
+        if($(this).hasClass('selectedStyles')){
+          $(this).removeClass('selectedStyles')
+           $(this).css({
+            'opacity':'1'
+          })
+        }else{
+          $(this).addClass('selectedStyles')
+          $(this).css({
+            'opacity':'0.3'
+          })
+        }
+      })
+      $('.backbtnStyles').click(function(){
+        $('.sidenavStyles').css({
           'width':'0px',
         })
       })

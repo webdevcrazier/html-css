@@ -28,7 +28,6 @@
 }
 
 .page-heading__left {
-    /*padding-left: 8%;*/
     flex: 0 0 42%;
 }
 
@@ -158,9 +157,10 @@
 
 .page-heading__center {
     display: flex;
-    padding-top: 100px;
+    /*padding-top: 100px;
     padding-right: 158px;
-    padding-left: 161px;
+    padding-left: 161px;*/
+    padding: 5% 10% 0 10%;
     justify-content: space-around;
 }
 
@@ -188,7 +188,7 @@
 .filters {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 65%;
     margin: 0 auto;
 }
@@ -254,11 +254,6 @@
     cursor: pointer;
 }
 
-/*.page-sort__list {
-    padding: 0;
-    margin: 0;
-}*/
-
 .page-sort__list div {
     list-style: none;
     display: inline-block;
@@ -276,26 +271,20 @@
     border: 1px solid rgba(0, 0, 0, .2);
 }
 
-.page-heading__list>div, .page-sort__list>div {
-    /*box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);*/
-}
-
 .sorts {
-    width: 61.5%;
+    width: 65%;
     margin: 0 auto;
 }
 
 .page-products {
     background-color: black;
     width: 100%;
-    /* padding: 40px 75px; */
-    padding: 40px 65px;
+    padding: 40px 6%; 
     display: grid;
-    /* grid-template-columns: repeat(5, 1fr); */
-    /* grid-template-rows: repeat(1, 12vw); */
-    grid-template-columns: repeat(5, 225px);
-    grid-template-rows: repeat(4, 15vw);
-    grid-gap: 24px 80px;
+    /*grid-template-rows: repeat(4, 15vw);*/
+    grid-template-columns: repeat(5, 18%);
+    grid-template-rows: repeat(4, 24%);
+    grid-gap: 24px 5px;
     position: absolute;
 }
 
@@ -325,6 +314,9 @@
     line-height: 130.5%;
     color: black;
     margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product>p {
@@ -421,7 +413,7 @@
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    bottom: -45px;
+    bottom: -50px;
     position: relative;
 }
 
@@ -434,28 +426,338 @@
 .mobile_filter_sort {
     display: none;
 }
-
+.sidenav {
+    display: none;
+}
+.sidenavBrands {
+    display: none;
+}
+.sidenavStyles {
+    display: none;
+}
 select.brands option[value="ALL"]   { background-image:url(pic/yezze.png);   }
 
-@media only screen and (max-width: 600px) {
-    .page-heading {
-        padding: 0 1.5rem 50px;
+@media only screen and (max-width: 1300px) and (min-width: 1025px) {
+    .page-products{
+        grid-template-columns:repeat(5, 20%);
+    } 
+}
+@media only screen and (max-width: 1725px) and (min-width: 1025px) {
+    .page-heading__title{
+        font-size: 4em;
+        line-height: 75px;
     }
-    .inputContainer>input {
+    .page-heading__info{
+        padding: 0 78px 0px 40px;
+        width: 50%
+    }
+    .product_1{
+        height: 100% !important;
+        width: 95% !important;
+        padding: 3% 12% !important;
+    }
+    .product{
+        height: 100% !important;
+        width: 93% !important;
+    }
+    .product>img{
+        width: 65% !important;
+        height: 55% !important;
+    }
+}
+@media only screen and (max-width: 1025px) {
+     .inputContainer>input {
         display: none;
+    }
+    .product {
+        width: 100% !important;
+        border: 1px solid lightgray
+    }
+    .page-products{
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(1, 11%);
+        grid-gap: 0;
+        padding: 0
+    }
+    .product>img {
+        height: 62% !important;
+    }
+     .inputContainer {
+        position: unset;
     }
     .search-icon {
-        position: relative;
-        padding-top: 0;
-        right: -20px;
-    }
-    .page-heading__top__menu {
-        display: none;
+        position: absolute;
+        right: 15%;
+        padding-top: 0
     }
     .mobile-menu {
         display: block;
         widows: 18px;
         height: 12px;
+    }
+    .page-heading__top__menu {
+        display: none;
+    }
+    .page-heading__popular {
+        padding-left: 50px !important;
+    }
+    .page-heading__info {
+        display: none;
+    }
+    .page-heading__left {
+        text-align: center;
+        flex: 0 0 100%;
+    }
+    .product>p {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+    }
+    .price_product1 {
+            font-size: 24px;
+    line-height: 33px;
+    margin-right: 10px;
+    }
+    .filters {
+        display: none;
+    }
+    .sorts {
+        display: none
+    }
+    .mobile_filter_sort {
+        display: flex;
+        padding: 0 40px;
+        justify-content: space-between;
+    }
+    .separator {
+        border: 1px solid #939393;
+    }
+    .mobile_filter>h1, .mobile_sort>h1 {
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130.5%;
+        margin-bottom: 10px;
+    }
+    .mobile_filter {
+        width: 45%
+    }
+    .mobile_sort {
+        width: 45%
+    }
+    .mobile_filter_div, .mobile_sort_div{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .mobile_filter_div>img, .mobie_sort_div>img{
+        height: 8px;
+        width: 12px
+    }
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 26px;
+        display: block;
+    }
+    .sidenav>h1 {
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 130.5%;
+        float: right;
+        margin-right: 35%;
+    }
+    .sidenav a {
+        padding: 8px 8px 8px 7%;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        font-size: 36px;
+    }
+    .sidenav>div {
+        padding-left: 7%;
+        margin-top: 56px;
+    }
+    .mobile_select_div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    } 
+    .select2-container {
+        min-width: 240px !important;
+    }
+    .mobile_select_div>div {
+        width: 80%;
+        border: 1px solid black;
+        border-radius: 500px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:0 17px;
+    }  
+    .mobile_select_div>label {
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130.5%;
+    }
+    .mobile_select_div>div>p {
+        margin: 0
+    }
+    .mobile_select_div>div>img {
+        height: 8px;
+        width: 12px
+    } 
+    #mySidenavFilter {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 22;
+        top: 0;
+        right: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 26px;
+        display: block;
+    }
+    #mySidenavFilter>h1 {
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 130.5%;
+        float: right;
+        margin-right: 35%;
+    }
+    #mySidenavFilter a {
+        padding: 8px 8px 8px 7%;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    #mySidenavFilter .backbtn {
+        position: absolute;
+        top: 0;
+        font-size: 36px;
+    }
+    #mySidenavFilter>hr {
+        margin-top: 50px;
+        height: 1px;
+        background-color: black
+    }
+    .brands_list {
+        list-style: none;
+        padding: 0 11%;
+    }
+    .brands_list>li {
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 44px;
+        margin-top: 10px;
+        color: black 
+    }
+    .brands_list>li>img {
+        margin-right: 20px;
+    }
+    .mobile_inputContainer>input{
+        padding-left: 40px;
+        width: 90%;
+        height: 40px;
+        background: #FFFFFF;
+        box-sizing: border-box;
+        margin-top: 20px;
+        border-radius: 100px;
+        margin-left: 7%;
+    }
+    .mobile_inputContainer {
+        position: relative;
+    }
+    .mobile_inputContainer>img {
+        position: relative;
+        padding-top: 0;
+        right: -11%;
+        bottom: -50px;
+    }
+    .styles_list {
+        padding: 7%;
+    }
+    .styles_list>li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .styles_list>li>img {
+        /*height: 55px;*/
+        width: 20%;
+    }
+    .styles_list>li>p{
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 19px;
+        margin-left: 50px;
+        padding-right: 35px;
+    }
+
+} 
+@media only screen and (max-width: 800px) and (min-width: 601px) {
+    .page-products {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(1, 11%);
+    }
+    .page-heading {
+        padding: 0 3.5rem 50px
+    }
+    .product>img {
+        height: 57% !important;
+    }
+    .page-heading__left {
+        flex: 0 0 100%;
+    }
+    .page-heading__title {
+        font-size:4.5em;
+    }
+    .styles_list>li>img {
+        height: 90px;
+        width: 90px;
+    }
+    .styles_list>li>p {
+        font-size: 16px;
+    }
+    .brands_list>li{
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .page-heading {
+        padding: 0 1.5rem 50px;
     }
     .page-heading__top {
         align-items: end;
@@ -495,6 +797,9 @@ select.brands option[value="ALL"]   { background-image:url(pic/yezze.png);   }
     .product>h3 {
         font-size: 14px;
         line-height: 130.5%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .product>p {
         font-weight: 300;
@@ -592,52 +897,4 @@ select.brands option[value="ALL"]   { background-image:url(pic/yezze.png);   }
     .page_products {
         margin-top: -20px;
     }
-    .sidenav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        background-color: white;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 26px;
-    }
-    .sidenav>h1 {
-        font-family: Merriweather;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 130.5%;
-        float: right;
-        margin-right: 70px;
-    }
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-    }
-    .sidenav a:hover {
-        color: #f1f1f1;
-    }
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        font-size: 36px;
-    }
-    .sidenav>div {
-        padding-left: 35px;
-        margin-top: 50px;
-    }
-    .mobile_select_div {
-        display: flex;
-        flex-direction: column;
-    } 
-    .select2-container {
-        min-width: 240px !important;
-    }   
 }
